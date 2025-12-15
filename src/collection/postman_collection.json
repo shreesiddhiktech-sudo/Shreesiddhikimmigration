@@ -1,0 +1,110 @@
+{
+  "info": {
+    "_postman_id": "c8a9d6c7-1e23-4b8f-9c1d-123456789abc",
+    "name": "Auth API - Agent & Student",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Signup & Login APIs using Node.js, Sequelize, MySQL, Joi"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Signup",
+      "item": [
+        {
+          "name": "Agent Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Agent One\",\n  \"email\": \"agent1@test.com\",\n  \"phone\": \"9999999999\",\n  \"password\": \"Agent@123\",\n  \"user_type\": 1,\n  \"company_reg_paper\": \"reg_doc.pdf\",\n  \"company_gst_paper\": \"gst_doc.pdf\",\n  \"company_pan_number\": \"ABCDE1234F\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/signup/agent",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "signup", "agent"]
+            }
+          }
+        },
+        {
+          "name": "Student Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Student One\",\n  \"email\": \"student1@test.com\",\n  \"phone\": \"8888888888\",\n  \"password\": \"Student@123\",\n  \"user_type\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/signup/student",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "signup", "student"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Agent Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"AGT10001\",\n  \"password\": \"Agent@123\",\n  \"user_type\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Student Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": \"STD10001\",\n  \"password\": \"Student@123\",\n  \"user_type\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
