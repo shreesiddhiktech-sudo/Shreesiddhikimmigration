@@ -89,12 +89,14 @@ exports.signup = async (req, res) => {
     const { email, password } = req.body;
 
     const existingUser = await User.findOne({ where: { email } });
-    if (existingUser) {
-      return res.json({
-        status: 1,
-        message: "User already registered",
-      });
-    }
+if (existingUser) {
+  return res.json({
+    status: 1,
+    message: "User already registered",
+  });
+}
+
+const t = await db.sequelize.transaction();
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -147,7 +149,7 @@ exports.signup = async (req, res) => {
       data: { user_id },
     });
   } catch (err) {
-    await t.rollback();
+    if (t) await t.rollback(); // ✅ safe rollback
     return res.status(500).json({
       status: 1,
       message: err.message,

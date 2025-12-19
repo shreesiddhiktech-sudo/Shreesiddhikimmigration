@@ -7,4 +7,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", require("./routes/auth.routes"));
+app.use("/api/visacategories", require("./routes/visacategory.routes"));
+app.use("/api/countries", require("./routes/country.routes"));
 module.exports = app;
