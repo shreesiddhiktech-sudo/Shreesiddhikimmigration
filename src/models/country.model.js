@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     "Country",
     {
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },

@@ -9,4 +9,6 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/visacategories", require("./routes/visacategory.routes"));
 app.use("/api/countries", require("./routes/country.routes"));
+app.use("/api", require("./routes/agentVisa.routes"));
+
 module.exports = app;

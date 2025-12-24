@@ -2,7 +2,7 @@ const app = require("./src/app");
 const db = require("./src/models");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 5000;
+const DB_PORT = process.env.DB_PORT || 5000;
 
 
 db.sequelize.authenticate()
@@ -12,7 +12,7 @@ db.sequelize.authenticate()
 
 db.sequelize.sync().then(() => {
   console.log("Database connected");
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  app.listen(DB_PORT, () => {
+    console.log(`Server running on DB_PORT ${DB_PORT}`);
   });
 });
