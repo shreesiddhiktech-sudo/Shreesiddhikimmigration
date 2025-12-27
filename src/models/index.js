@@ -10,6 +10,7 @@ db.AgentDocument = require("./agentDocument.model")(sequelize, db.Sequelize);
 db.VisaCategory = require("./visaCategory.model")(sequelize, db.Sequelize);
 db.Country = require("./country.model")(sequelize, db.Sequelize);
 db.AgentVisaFile = require("./agentVisaFile.model")(sequelize, db.Sequelize);
+db.VisaDocument = require("./visaDocument.model")(sequelize, db.Sequelize);
 
 // Associations
 db.User.hasOne(db.AgentDocument, { foreignKey: "user_id", sourceKey: "user_id" });

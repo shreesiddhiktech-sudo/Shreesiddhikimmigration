@@ -190,6 +190,102 @@
           }
         }
       ]
+    },
+    {
+  "name": "Visa Document Upload",
+  "item": [
+    {
+      "name": "Upload Study Visa Documents",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "visaType", "value": "study", "type": "text" },
+            { "key": "aadhaarFront", "type": "file" },
+            { "key": "aadhaarBack", "type": "file" },
+            { "key": "marksheet10", "type": "file" },
+            { "key": "marksheet12", "type": "file" },
+            { "key": "passportFront", "type": "file" },
+            { "key": "passportBack", "type": "file" },
+            { "key": "graduate", "type": "file" },
+            { "key": "postGraduate", "type": "file" },
+            { "key": "miscellaneous", "type": "file" }
+          ]
+        },
+        "url": {
+          "raw": "{{NARULA_LOCAL_URL}}/visa/upload",
+          "host": ["{{NARULA_LOCAL_URL}}"],
+          "path": ["visa", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Upload Work Visa Documents",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "visaType", "value": "work", "type": "text" },
+            { "key": "aadhaarFront", "type": "file" },
+            { "key": "aadhaarBack", "type": "file" },
+            { "key": "marksheet10", "type": "file" },
+            { "key": "marksheet12", "type": "file" },
+            { "key": "passportFront", "type": "file" },
+            { "key": "passportBack", "type": "file" },
+            { "key": "cv", "type": "file" },
+            { "key": "miscellaneous", "type": "file" }
+          ]
+        },
+        "url": {
+          "raw": "{{NARULA_LOCAL_URL}}/visa/upload",
+          "host": ["{{NARULA_LOCAL_URL}}"],
+          "path": ["visa", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Fail — Missing Mandatory Document",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "visaType", "value": "study", "type": "text" },
+            { "key": "aadhaarFront", "type": "file" }
+          ]
+        },
+        "url": {
+          "raw": "{{NARULA_LOCAL_URL}}/visa/upload",
+          "host": ["{{NARULA_LOCAL_URL}}"],
+          "path": ["visa", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Fail — Invalid Visa Type",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "visaType", "value": "tourist", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "{{NARULA_LOCAL_URL}}/visa/upload",
+          "host": ["{{NARULA_LOCAL_URL}}"],
+          "path": ["visa", "upload"]
+        }
+      }
     }
+  ]
+}
+
   ]
 }

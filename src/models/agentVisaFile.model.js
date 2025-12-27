@@ -1,6 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define("AgentVisaFile", {
-    file_number: DataTypes.STRING,
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     visa_category_id: DataTypes.INTEGER,
