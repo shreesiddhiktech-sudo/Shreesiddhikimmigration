@@ -160,52 +160,6 @@ const t = await db.sequelize.transaction();
 
 /* ================== LOGIN ================== */
 
-// exports.login = async (req, res) => {
-//   try {
-//     const { user_id, password, user_type } = req.body;
-
-//     const user = await User.findOne({
-//       where: { user_id, user_type },
-//     });
-
-//     if (!user) {
-//       return res.status(404).json({
-//         status: 1,
-//         message: "Invalid credentials",
-//       });
-//     }
-
-//     if (user.user_type === 1 && user.is_verified === 0) {
-//       return res.status(403).json({
-//         status: 2,
-//         message: "Agent not verified",
-//       });
-//     }
-
-//     const isMatch = await bcrypt.compare(password, user.password);
-
-//     if (!isMatch) {
-//       return res.status(401).json({
-//         status: 1,
-//         message: "Invalid credentials",
-//       });
-//     }
-
-//     return res.status(200).json({
-//       status: 0,
-//       message: "Login successful",
-//       data: {
-//         user_id: user.user_id,
-//         user_type: user.user_type,
-//       },
-//     });
-//   } catch (err) {
-//     return res.status(500).json({
-//       status: 1,
-//       message: err.message,
-//     });
-//   }
-// };
 
 exports.login = async (req, res) => {
   const { user_id, password, user_type } = req.body;

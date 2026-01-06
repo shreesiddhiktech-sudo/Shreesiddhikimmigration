@@ -11,8 +11,11 @@ db.VisaCategory = require("./visaCategory.model")(sequelize, db.Sequelize);
 db.Country = require("./country.model")(sequelize, db.Sequelize);
 db.AgentVisaFile = require("./agentVisaFile.model")(sequelize, db.Sequelize);
 db.VisaDocument = require("./visaDocument.model")(sequelize, db.Sequelize);
+db.EmailSetting = require("./emailSetting.model")(sequelize, db.Sequelize);
 
 // Associations
 db.User.hasOne(db.AgentDocument, { foreignKey: "user_id", sourceKey: "user_id" });
 db.AgentDocument.belongsTo(db.User, { foreignKey: "user_id", targetKey: "user_id" });
+
+
 module.exports = db;

@@ -12,5 +12,7 @@ app.use("/api/countries", require("./routes/country.routes"));
 app.use("/api", require("./routes/agentVisa.routes"));
 app.use("/api", require("./routes/studyWorkVisaountry.routes"));
 app.use("/api/visa", require("./routes/visaDocument.routes"));
+app.use("/api", require("./routes/emailSetting.routes"));
+
 
 module.exports = app;
