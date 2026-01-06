@@ -65,7 +65,7 @@ const EmailSetting = db.EmailSetting;
   try {
     const { id } = req.params;
 
-    const setting = await EmailSetting.findByPk(id);
+    const setting = await EmailSetting.findByPk(id) ;
     if (!setting) {
       return res.status(404).json({ status: 0, status_code: 404, data: {}, message: "Email setting not found" });
     }
