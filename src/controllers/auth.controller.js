@@ -45,20 +45,7 @@ const AgentDocument = db.AgentDocument;
 //         user_id: userId,
 //         password: hashedPassword,
 //         status,
-//         is_verified,
-//       },
-//       { transaction: t }
-//     );
-
-//     if (user_type === 1) {
-//       await AgentDocument.create(
-//         {
-//           user_id: userId,
-//           company_reg_paper: req.body.company_reg_paper,
-//           company_gst_paper: req.body.company_gst_paper,
-//           company_pan_number: req.body.company_pan_number,
-//         },
-//         { transaction: t }
+: t }
 //       );
 //     }
 
@@ -89,17 +76,13 @@ exports.signup = async (req, res) => {
     const { email, password } = req.body;
 
     const existingUser = await User.findOne({ where: { email } });
-    if (existingUser) {
-      return res.json({
-        status: 1,
-        message: "User already registered",
-      });
+    if 
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     let user_id;
-    let is_verified = 1;
+ ;
     let responseStatus = 0;
     let message = "Registered successfully";
 
@@ -127,16 +110,7 @@ exports.signup = async (req, res) => {
       { transaction: t }
     );
 
-    if (user_type === 1) {
-      await AgentDocument.create(
-        {
-          user_id,
-          company_reg_paper: req.body.company_reg_paper,
-          company_gst_paper: req.body.company_gst_paper,
-          company_pan_number: req.body.company_pan_number,
-        },
-        { transaction: t }
-      );
+ 
     }
 
     await t.commit();
