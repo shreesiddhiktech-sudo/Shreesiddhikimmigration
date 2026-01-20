@@ -194,12 +194,6 @@
     {
   "name": "Visa Document Upload",
   "item": [
-    {
-      "name": "Upload Study Visa Documents",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
           "mode": "formdata",
           "formdata": [
             { "key": "visaType", "value": "study", "type": "text" },

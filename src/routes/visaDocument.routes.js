@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const upload = require("../middlewares/upload.middleware");
-const validate = require("../middlewares/validate.middleware");
-const { visaDocumentSchema } = require("../validations/visaDocument.validation");
-const { uploadDocuments, getVisaDocumentsPdf } = require("../controllers/visaDocument.controller");
-
-router.post(
-  "/upload",
-  upload.fields([
+con
     { name: "aadhaarFront", maxCount: 1 },
     { name: "aadhaarBack", maxCount: 1 },
     { name: "marksheet10", maxCount: 1 },
@@ -23,7 +17,4 @@ router.post(
   validate(visaDocumentSchema),
   uploadDocuments
 );
-router.get("/documents/:fileNumber", getVisaDocumentsPdf);
-
-
-module.exports = router;
+rout
