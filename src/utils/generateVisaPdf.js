@@ -4,14 +4,7 @@ const path = require("path");
 
 async function generateVisaPdf(documentRecord) {
   const pdfDoc = await PDFDocument.create();
-
-  const fileFields = [
-    "aadhaarFront",
-    "aadhaarBack",
-    "marksheet10",
-    "marksheet12",
-    "graduate",
-    "postGraduate",
+uate",
     "passportFront",
     "passportBack",
     "cv",
