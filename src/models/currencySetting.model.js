@@ -1,10 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const CurrencySetting = sequelize.define("CurrencySetting", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
+ 
     currency_position: {
       type: DataTypes.ENUM("Left", "Right"),
       allowNull: false,
