@@ -6,10 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-      },
-      country_id: {
-        type: DataTypes.STRING(10),
-        allowNull: false,
+      },lse,
         unique: true,
       },
       country_name: {

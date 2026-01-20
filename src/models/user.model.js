@@ -6,11 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
     },
 
-    user_id: {
-      type: DataTypes.STRING(10),
-      unique: true,
-    },
-
+  
     name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
@@ -26,13 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM("1", "2"),
     },
 
-    is_verified: {
-      type: DataTypes.TINYINT,
-      defaultValue: 0,
-    },
-
-    status: {
-      type: DataTypes.TINYINT,
+ : DataTypes.TINYINT,
       defaultValue: 2,
     },
   });
