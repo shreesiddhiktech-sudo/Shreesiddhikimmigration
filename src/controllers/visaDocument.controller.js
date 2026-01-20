@@ -1,14 +1,7 @@
 const db = require("../models");
 const VisaDocument = db.VisaDocument;
 const { generateFileNumber } = require("../utils/fileNumber");
-const { generateVisaPdf } = require("../utils/generateVisaPdf");
-
-uploadDocuments = async (req, res) => {
-  try {
-    const files = req.files;
-    const { visaType } = req.body;
-
-    if (!files.aadhaarFront || !files.aadhaarBack || !files.marksheet10 || !files.marksheet12 || !files.passportFront || !files.passportBack) {
+.aadhaarFront || !files.aadhaarBack || !files.marksheet10 || !files.marksheet12 || !files.passportFront || !files.passportBack) {
       return res.status(400).json({ status: 1, message: "Missing mandatory documents" });
     }
 

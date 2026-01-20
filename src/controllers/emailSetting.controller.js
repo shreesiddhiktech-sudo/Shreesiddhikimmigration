@@ -2,14 +2,6 @@ const db = require("../models");
 const { emailSettingSchema } = require("../validations/emailSetting.validation");
 const EmailSetting = db.EmailSetting;
 
-// CREATE or UPDATE (single row logic)
- const createOrUpdateEmailSetting = async (req, res) => {
-  try {
-    const { error } = emailSettingSchema.validate(req.body);
-    if (error) {
-      return res.status(400).json({ status: 0, status_code: 400, message: error.details[0].message });
-    }
-
     const existing = await EmailSetting.findOne();
 
     if (existing) {
@@ -29,19 +21,7 @@ const EmailSetting = db.EmailSetting;
 // GET email settings
  const getEmailSetting = async (req, res) => {
   try {
-    const setting = await EmailSetting.findOne();
-    return res.json({ status: 1, data: setting ,message: "Email settings fetched successfully", status_code: 200 });
-  } catch (err) {
-    return res.status(500).json({ status: 0, status_code: 500, data:{}, message: "Server error" });
-  }
-};
-
-// UPDATE by ID
- const updateEmailSetting = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    const { error } = emailSettingSchema.validate(req.body);
+  ror } = emailSettingSchema.validate(req.body);
     if (error) {
       return res.status(400).json({ status: 0, status_code: 400, message: error.details[0].message });
     }

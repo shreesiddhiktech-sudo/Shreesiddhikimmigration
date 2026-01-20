@@ -1,12 +1,5 @@
 {
-  "info": {
-    "_postman_id": "a3e519ac-f8ea-483f-b048-25fcb9cad390",
-    "name": "Narula Immigration",
-    "description": "Signup & Login APIs using Node.js, Sequelize, MySQL, Joi",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "variable": [
-    {
+
       "key": "NARULA_LOCAL_URL",
       "value": "http://localhost:8000/api"
     }
@@ -201,17 +194,7 @@
         "header": [],
         "body": {
           "mode": "formdata",
-          "formdata": [
-            { "key": "visaType", "value": "study", "type": "text" },
-            { "key": "aadhaarFront", "type": "file" },
-            { "key": "aadhaarBack", "type": "file" },
-            { "key": "marksheet10", "type": "file" },
-            { "key": "marksheet12", "type": "file" },
-            { "key": "passportFront", "type": "file" },
-            { "key": "passportBack", "type": "file" },
-            { "key": "graduate", "type": "file" },
-            { "key": "postGraduate", "type": "file" },
-            { "key": "miscellaneous", "type": "file" }
+        neous", "type": "file" }
           ]
         },
         "url": {

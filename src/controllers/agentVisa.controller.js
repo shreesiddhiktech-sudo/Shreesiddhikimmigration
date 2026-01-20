@@ -1,14 +1,7 @@
 const db = require("../models");
 const { getVisaCategories } = require("./visacategories.controller");
 
-exports.submitFiles = async (req, res) => {
-  try {
-    const { name, email, visa_category_id, country_id, agent_id } = req.body;
-
-    const category = getVisaCategories.find(v => v.id == visa_category_id);
-    if (!category) return res.status(400).json({ status: 1, message: "Invalid Visa Category" });
-
-    const file_number = category.prefix + Math.floor(100000000 + Math.random() * 900000000);
+ber = category.prefix + Math.floor(100000000 + Math.random() * 900000000);
 
     const record = await db.AgentVisaFile.create({
       file_number,
