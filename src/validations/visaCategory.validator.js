@@ -1,9 +1,4 @@
-const Joi = require("joi");
-
-const visaCategorySchema = Joi.array().items(
-  Joi.object({
-    code: Joi.string()
-      .valid("STD", "WRK", "TOUR")
+K", "TOUR")
       .required(),
 
     name: Joi.string()
