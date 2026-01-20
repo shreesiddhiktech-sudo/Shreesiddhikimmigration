@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "a3e519ac-f8ea-483f-b048-25fcb9cad390",
+    "name": "Narula Immigration",
+    "description": "Signup & Login APIs using Node.js, Sequelize, MySQL, Joi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "NARULA_LOCAL_URL",
+      "value": "http://localhost:8000/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "item": [
+            {
+              "name": "Agent Login",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": \"AGT10001\",\n  \"password\": \"Agent@123\",\n  \"user_type\": 1\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "login"]
+                }
+              }
+            },
+            {
+              "name": "Student Login",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": \"STD10001\",\n  \"password\": \"Student@123\",\n  \"user_type\": 2\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "login"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Signup",
+          "item": [
+            {
+              "name": "Agent Signup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Agent One\",\n  \"email\": \"agent1@test.com\",\n  \"phone\": \"9999999999\",\n  \"password\": \"Agent@123\",\n  \"user_type\": 1,\n  \"company_reg_paper\": \"reg_doc.pdf\",\n  \"company_gst_paper\": \"gst_doc.pdf\",\n  \"company_pan_number\": \"ABCDE1234F\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/signup/agent",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "signup", "agent"]
+                }
+              }
+            },
+            {
+              "name": "Student Signup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Student One\",\n  \"email\": \"student1@test.com\",\n  \"phone\": \"8888888888\",\n  \"password\": \"Student@123\",\n  \"user_type\": 2\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/signup/student",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "signup", "student"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visa Categories",
+      "item": [
+        {
+          "name": "Create Visa Categories (Bulk)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"code\": \"STD\", \"name\": \"Study Visa\", \"visible_to\": \"STUDENT\" },\n  { \"code\": \"WRK\", \"name\": \"Work Visa\", \"visible_to\": \"AGENT\" },\n  { \"code\": \"TOUR\", \"name\": \"Tourist Visa\", \"visible_to\": \"STUDENT\" }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/visacategories",
+              "host": ["{{base_url}}"],
+              "path": ["visacategories"]
+            }
+          }
+        },
+        {
+          "name": "Get Visa Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/visacategories?userType=STUDENT",
+              "host": ["{{base_url}}"],
+              "path": ["visacategories"],
+              "query": [
+                {
+                  "key": "userType",
+                  "value": "STUDENT"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Countries",
+      "item": [
+        {
+          "name": "Create Countries (Bulk)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"country_id\": \"IN\", \"country_name\": \"India\" },\n  { \"country_id\": \"US\", \"country_name\": \"United States\" },\n  { \"country_id\": \"CA\", \"country_name\": \"Canada\" }\n]"
+            },
+            "url": {
+              "raw": "{{base_url}}/countries",
+              "host": ["{{base_url}}"],
+              "path": ["countries"]
+            }
+          }
+        },
+        {
+          "name": "Get Countries",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/countries",
+              "host": ["{{base_url}}"],
+              "path": ["countries"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
