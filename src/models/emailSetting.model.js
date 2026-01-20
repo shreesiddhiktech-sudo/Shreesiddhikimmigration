@@ -5,24 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     const EmailSetting = sequelize.define("EmailSetting", {
       id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  mail_type: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  from_email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: { isEmail: true },
-  },
-  from_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  smtp_host: {
-    type: DataTypes.STRING,
+    au
     allowNull: false,
   },
   smtp_port: {

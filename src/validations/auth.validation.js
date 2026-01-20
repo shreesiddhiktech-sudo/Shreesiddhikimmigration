@@ -45,17 +45,7 @@ exports.agentSignup = {
 
     company_reg_paper: Joi.string().required(),
     company_gst_paper: Joi.string().required(),
-    company_pan_number: Joi.string().optional(),
-  }),
-};
-
-exports.studentSignup = {
-  body: Joi.object({
-    name: Joi.string().required(),
-    email: Joi.string().email().required(),
-    phone: Joi.string().length(10).required(),
-    password: Joi.string().min(6).required(),
-    user_type: Joi.number().valid(2).required(),
+    company_d(2).required(),
   }),
 };
 
