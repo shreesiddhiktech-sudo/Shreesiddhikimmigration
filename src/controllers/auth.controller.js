@@ -3,18 +3,7 @@ const db = require("../models");
 const { generateUserId } = require("../utils/idGenerator");
 
 const User = db.User;
-const AgentDocument = db.AgentDocument;
-
-/* ================== SIGNUP ================== */
-
-// exports.signup = async (req, res) => {
-//   const t = await db.sequelize.transaction();
-
-//   try {
-//     const { user_type, email, phone, password } = req.body;
-
-//     const existingUser = await User.findOne({
-//       where: { email },
+const
 //     });
 
 //     if (existingUser) {

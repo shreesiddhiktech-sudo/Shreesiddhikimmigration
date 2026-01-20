@@ -6,17 +6,7 @@ const storage = multer.diskStorage({
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, Date.now() + "-" + file.fieldname + ext);
-  },
-});
-
-const fileFilter = (req, file, cb) => {
-  if (file.fieldname === "miscellaneous") {
-    if (file.mimetype !== "application/pdf") {
-      return cb(new Error("Miscellaneous must be a PDF file"));
-    }
-  }
+    con
   cb(null, true);
 };
 
